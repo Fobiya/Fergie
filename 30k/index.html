@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:image" content="http://fergie.com/images/og.png">
+    <meta property="og:title" content="Fergie" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Fergie" />
+    <meta name="keywords" content="Fergie" />
+    <meta name="description" content="Fergie" />
+    <link rel="android-chrome" sizes="96x96" href="./images/android-chrome-96x96.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <title>Fergie</title>
+    <style>
+        @font-face {
+            font-family: "ITCAvantGardePro Bk";
+            src: url(fonts/ITCAvantGardePro-Bk.eot) format("eot"), url(fonts/ITCAvantGardePro-Bk.woff) format("woff"), url(fonts/ITCAvantGardePro-Bk.woff2) format("woff2"), url(fonts/ITCAvantGardePro-Bk.ttf) format("truetype")
+        }
+        
+        @font-face {
+            font-family: "ITCAvantGardePro Bold";
+            src: url(fonts/ITCAvantGardePro-Bold.eot) format("eot"), url(fonts/ITCAvantGardePro-Bold.woff) format("woff"), url(fonts/ITCAvantGardePro-Bold.ttf) format("truetype")
+        }
+        
+        .home-page-video {
+            display: none;
+        }
+        
+        @media only screen and (max-width:1919px) and (min-width:1100px) {
+            .home-page-video {
+                display: inherit;
+                position: absolute;
+                height: 100vh;
+                width: 100%;
+                z-index: -1;
+                overflow: hidden;
+            }
+        }
+        
+        header .logo_fergie {
+            display: none;
+        }
+        
+        .blok__ .social_link {
+            display: none !important;
+        }
+        
+        @media only screen and (max-width:1099px) and (min-width:769px) {
+            .logo_fergie {
+                max-width: 280px !important;
+                right: 1px;
+                position: absolute !important;
+                bottom: 1px;
+                margin-bottom: 25px !important;
+                height: auto !important;
+            }
+        }
+        
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            transition: opacity .1s;
+            transition-delay: 3s;
+            z-index: 11000
+        }
+        
+        .preloader.is-loaded {
+            pointer-events: none;
+            background: 0 0;
+            opacity: 0
+        }
+        
+        .pl-line {
+            position: absolute;
+            width: 1px;
+            height: 150%;
+            background: transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(20deg);
+            transition: opacity 1s ease-out
+        }
+        
+        .pl-l,
+        .pl-line>div,
+        .pl-r {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            will-change: transform
+        }
+        
+        .is-loaded .pl-line {
+            opacity: 0
+        }
+        
+        .pl-line>div {
+            width: 100%;
+            background: #fff;
+            left: 0;
+            transform: translateY(-100%);
+            animation: pulse 2s infinite;
+            animation-timing-function: cubic-bezier(.785, .135, .15, .86)
+        }
+        
+        .pl-l,
+        .pl-r {
+            width: 70%;
+            transition: transform 1s cubic-bezier(.785, .135, .15, .86);
+            background: #000
+        }
+        
+        .pl-l {
+            left: -20%;
+            transform: skew(-20deg)
+        }
+        
+        .is-loaded .pl-l {
+            transform: translateX(-100%) skew(-20deg)
+        }
+        
+        .pl-r {
+            right: -20%;
+            transform: skew(-20deg)
+        }
+        
+        .is-loaded .pl-r {
+            transform: translateX(100%) skew(-20deg)
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: translateY(-100%)
+            }
+            100% {
+                transform: translateY(100%)
+            }
+        }
+        
+        .hidden {
+            display: none
+        }
+        
+        svg {
+            max-width: 100%
+        }
+        
+        .cd-main-content {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: table
+        }
+        
+        .cd-modal {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            visibility: hidden;
+            -webkit-transition: visibility 0s .6s;
+            -moz-transition: visibility 0s .6s;
+            transition: visibility 0s .6s
+        }
+        
+        .cd-modal svg {
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+        
+        .cd-modal svg>path {
+            fill: #000
+        }
+        
+        .cd-modal.modal-is-visible {
+            visibility: visible;
+            -webkit-transition: visibility 0s 0s;
+            -moz-transition: visibility 0s 0s;
+            transition: visibility 0s 0s
+        }
+        
+        .cd-modal-content {
+            position: relative;
+            height: 100vh;
+            overflow-y: auto;
+            opacity: 0;
+            -webkit-transition: opacity .3s 0s, -webkit-transform .3s 0s;
+            -moz-transition: opacity .3s 0s, -moz-transform .3s 0s;
+            transition: opacity .3s 0s, transform .3s 0s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        
+        .modal-is-visible .cd-modal-content {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-overflow-scrolling: touch;
+            -webkit-transition: opacity .3s .3s, -webkit-transform .3s .3s;
+            -moz-transition: opacity .3s .3s, -moz-transform .3s .3s;
+            transition: opacity .3s .3s, transform .3s .3s
+        }
+        
+        .cd-cover-layer {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #f2f2f2;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: opacity .3s .3s, visibility 0s .6s;
+            -moz-transition: opacity .3s .3s, visibility 0s .6s;
+            transition: opacity .3s .3s, visibility 0s .6s
+        }
+        
+        .cd-cover-layer.modal-is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+            -moz-transition: opacity .3s 0s, visibility 0s 0s;
+            transition: opacity .3s 0s, visibility 0s 0s
+        }
+        
+        a,
+        button,
+        input,
+        textarea {
+            outline: 0
+        }
+        
+        *,
+        .wrapper {
+            padding: 0
+        }
+        
+        .itn_link,
+        .social_link li a {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+        
+        #mute,
+        .bar,
+        .share_box,
+        button {
+            cursor: pointer
+        }
+        
+        .hover_links:after,
+        .newsletter:after,
+        .social_link li a:after {
+            content: ''
+        }
+        
+        .first_word_main,
+        .tc {
+            text-align: center
+        }
+        
+        * {
+            margin: 0
+        }
+        
+        body {
+            margin: 0 auto
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+            min-height: 100%;
+            font-family: "ITCAvantGardePro Bold", sans-serif;
+            color: #000;
+            font-size: 18px;
+            background: #fff
+        }
+        
+        button {
+            border: transparent
+        }
+        
+        a,
+        button {
+            text-decoration: none;
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear;
+            transition: .3s linear
+        }
+        
+        .pluso-wrap,
+        a:hover,
+        button:hover {
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear
+        }
+        
+        a:hover,
+        button:hover {
+            transition: .3s linear
+        }
+        
+        .container {
+            max-width: 1520px;
+            padding: 0;
+            position: relative
+        }
+        
+        .wrapg,
+        .wrapg img,
+        svg {
+            max-width: 100%
+        }
+        
+        .t-up {
+            text-transform: uppercase
+        }
+        
+        .callback:hover {
+            text-decoration: none;
+            background: #70e4a8
+        }
+        
+        .form-receive:hover {
+            background: #70e4a8;
+            border: 1px solid #70e4a8
+        }
+        
+        header {
+            height: 70px;
+            padding-top: 57px;
+        }
+        
+        .social_link li,
+        .social_link li a {
+            position: relative;
+            vertical-align: top
+        }
+        
+        .pluso {
+            width: 130px
+        }
+        
+        .pluso-wrap {
+            opacity: 0!important;
+            transition: .3s linear
+        }
+        
+        .back_again,
+        .line_it>div {
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear
+        }
+        
+        .pluso-wrap a {
+            -o-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -o-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg)
+        }
+        
+        .pluso-wrap a:hover {
+            opacity: .7
+        }
+        
+        .pluso-010011000110-02 .pluso-wrap a {
+            margin: 0 4px 0 0!important
+        }
+        
+        .back_again {
+            opacity: 1!important;
+            transition: .3s linear
+        }
+        
+        .pluso-more {
+            display: none!important
+        }
+        
+        .dev_main_part .logo_fergie,
+        .down_part .social_link {
+            display: none
+        }
+        
+        .dev_main_part {
+            padding: 59px 100px 0
+        }
+        
+        .social_link {
+            float: left;
+            z-index: 99;
+        }
+        
+        .social_link li a span {
+            vertical-align: top
+        }
+        
+        .social_link li {
+            display: inline-block;
+            height: 10px;
+            margin-right: 7px
+        }
+        
+        .social_link li:last-child {
+            margin-right: 0
+        }
+        
+        .social_link li a {
+            color: #1a1a1a;
+            font-size: 8px
+        }
+        
+        .soc_ico:hover,
+        .social_link li a:hover {
+            color: #9c8d8d
+        }
+        
+        .social_link li a:after {
+            position: absolute;
+            display: block;
+            width: 2px;
+            height: 7px;
+            background: #1a1a1a;
+            right: -6px;
+            top: 50%!important;
+            -o-transform: translateY(-50%)!important;
+            -moz-transform: translateY(-50%)!important;
+            -webkit-transform: translateY(-50%)!important;
+            transform: translateY(-50%)!important
+        }
+        
+        #mt-wrp,
+        #mute,
+        .itunes_box,
+        .line_it {
+            position: relative
+        }
+        
+        .soc_ico,
+        .social_link li:last-child a:after {
+            display: none
+        }
+        
+        .soc_ico {
+            font-size: 16px!important;
+            color: #1a1a1a
+        }
+        
+        .itunes_box {
+            float: right;
+            height: 10px
+        }
+        
+        .line_it {
+            overflow: hidden;
+            float: left;
+            margin-right: 20px;
+            height: 9px;
+            padding-top: 4px
+        }
+        
+        .line_it>div {
+            width: 50px;
+            height: 2px;
+            background: #000;
+            display: block;
+            transition: .3s linear
+        }
+        
+        .itn_link {
+            color: #1a1a1a;
+            font-size: 10px;
+            height: 9px;
+            line-height: 12px;
+            vertical-align: top
+        }
+        
+        .itn_link:hover+.line_it>div,
+        .share_box:hover .line_share>div {
+            -o-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear;
+            transition: .3s linear
+        }
+        
+        .share_box:hover .line_share>div {
+            -o-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%)
+        }
+        
+        #mt-wrp {
+            float: right;
+            z-index: 1000;
+            max-width: 352px;
+            width: 100%;
+        }
+        
+        #mute {
+            height: 12px;
+            width: 20px;
+            transition: opacity .4s
+        }
+        
+        .mute .bar {
+            animation: none!important
+        }
+        
+        .bar:first-child {
+            left: 1px;
+            animation-duration: 474ms
+        }
+        
+        .bar:nth-child(2) {
+            left: 5px;
+            animation-duration: 433ms
+        }
+        
+        .bar:nth-child(3) {
+            left: 9px;
+            animation-duration: 407ms
+        }
+        
+        .bar:nth-child(4) {
+            left: 13px;
+            animation-duration: 458ms
+        }
+        
+        .bar:nth-child(5) {
+            left: 17px;
+            animation-duration: .4s
+        }
+        
+        .bar {
+            background: #000;
+            bottom: 1px;
+            height: 3px;
+            position: absolute;
+            width: 3px;
+            animation: h 0s -.8s linear infinite alternate;
+            transition: height .4s
+        }
+        
+        @keyframes h {
+            0% {
+                opacity: .35;
+                height: 3px
+            }
+            100% {
+                opacity: 1;
+                height: 12px
+            }
+        }
+        
+        .social_glitch_box .logo_fergie {
+            position: absolute;
+            max-width: 352px;
+            width: 100%;
+            bottom: 0px;
+            height: auto;
+            right: 0px;
+            margin-bottom: 70px;
+        }
+        
+        .devstart-content {
+            height: 100vh;
+            padding-top: 70px;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden
+        }
+        
+        #v_cont {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #home-page-video {
+            top: 0;
+            left: 0;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        #home-page-video video {
+            width: 100%;
+            position: relative;
+            top: 0
+        }
+        
+        .first-block {
+            width: 100%
+        }
+        
+        .txt_box {
+            width: 470px;
+            position: relative;
+        }
+        
+        .notice {
+            font-size: 12px;
+            font-family: "ITCAvantGardePro Bk", sans-serif;
+            color: #0e0f12;
+            line-height: 1.65;
+            font-weight: 100;
+            width: 335px;
+            letter-spacing: 1.95px;
+            margin: 0 0 55px
+        }
+        
+        #user-one .hover_links,
+        .main_popap_word,
+        .share_bit {
+            font-family: "ITCAvantGardePro Bold", sans-serif
+        }
+        
+        .glitch,
+        .hover_links,
+        h3 {
+            font-weight: 700
+        }
+        
+        h3 {
+            font-size: 30px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            line-height: 2.067;
+            letter-spacing: 20px;
+            margin-bottom: 16px
+        }
+        
+        .hover_links,
+        .share_bit {
+            font-size: 10px;
+            letter-spacing: 2px
+        }
+        
+        h3 p+p {
+            letter-spacing: 19.3px
+        }
+        
+        .hover_links {
+            display: block;
+            width: 152px;
+            background: 0 0;
+            border: 3px solid #000;
+            line-height: 48px;
+            position: relative;
+            color: #1a1a1a;
+            overflow: hidden;
+            z-index: 9999
+        }
+        
+        .finish_word,
+        .hover_links:after {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: block
+        }
+        
+        .hover_links:after {
+            height: 100%;
+            background: #000;
+            left: 0;
+            -o-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            -webkit-transition: .2s linear;
+            -moz-transition: .2s linear;
+            -ms-transition: .2s linear;
+            -o-transition: .2s linear;
+            transition: .2s linear
+        }
+        
+        .finish_word {
+            left: 50%;
+            -o-transform: translate(-50%, 75%);
+            -ms-transform: translate(-50%, 75%);
+            -moz-transform: translate(-50%, 75%);
+            -webkit-transform: translate(-50%, 75%);
+            transform: translate(-50%, 75%);
+            color: #fff;
+            z-index: 10
+        }
+        
+        .hover_links:hover:after {
+            -o-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            -webkit-transition: .4s linear;
+            -moz-transition: .4s linear;
+            -ms-transition: .4s linear;
+            -o-transition: .4s linear;
+            transition: .4s linear
+        }
+        
+        .finish_word,
+        .hover_links:hover .finish_word,
+        .hover_links:hover .initial_word,
+        .initial_word {
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear
+        }
+        
+        .hover_links:hover .finish_word,
+        .hover_links:hover .initial_word {
+            -o-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+            -moz-transform: translateY(-100%);
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+            transition: .3s linear
+        }
+        
+        .hover_links:hover .finish_word {
+            -o-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0)
+        }
+        
+        .initial_word {
+            position: relative;
+            display: block
+        }
+        
+        .finish_word,
+        .initial_word {
+            transition: .3s linear;
+            letter-spacing: 2px
+        }
+        
+        .hover_group {
+            width: 320px;
+            padding: 0 1px
+        }
+        
+        .hover_1 {
+            float: left;
+            background: #000;
+            color: #fff
+        }
+        
+        .hover_1:after {
+            background: #fff
+        }
+        
+        .hover_1 .finish_word {
+            color: #000
+        }
+        
+        .glitch,
+        .share_bit {
+            color: #1a1a1a;
+            text-transform: uppercase
+        }
+        
+        .hover_2 {
+            float: right
+        }
+        
+        .share_box {
+            position: absolute;
+            float: left;
+            -o-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+            -o-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            bottom: 16px
+        }
+        
+        .social_share {
+            position: absolute;
+            height: 20px;
+            top: -3px
+        }
+        
+        .fergie_glitch,
+        .line_share,
+        .logo_fergie,
+        .newsletter {
+            position: relative
+        }
+        
+        .share_bit {
+            margin-right: 18px;
+            float: left
+        }
+        
+        #share:hover .pluso-wrap {
+            opacity: 1!important
+        }
+        
+        #share:hover .share_bit {
+            opacity: 0
+        }
+        
+        .line_share {
+            overflow: hidden;
+            -o-transform: translateY(50%);
+            -moz-transform: translateY(50%);
+            -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+            height: 10px
+        }
+        
+        .line_share>div {
+            width: 50px;
+            height: 2px;
+            background: #000;
+            display: block;
+            -webkit-transition: .3s linear;
+            -moz-transition: .3s linear;
+            -ms-transition: .3s linear;
+            -o-transition: .3s linear;
+            transition: .3s linear;
+            float: right
+        }
+        
+        .logo_fergie {
+            width: auto;
+            float: right
+        }
+        
+        .logo_visible {
+            margin-right: -35px;
+            font-size: 0
+        }
+        
+        .glitch {
+            font-size: 30px;
+            line-height: 2.067;
+            letter-spacing: 20px;
+            text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+            -moz-animation: noise .3s infinite;
+            -webkit-animation: noise .3s infinite;
+            animation: noise .3s infinite
+        }
+        
+        .fergie_glitch {
+            letter-spacing: 19.5px;
+            margin-bottom: 8px
+        }
+        
+        .last_fergie_glitch {
+            letter-spacing: 23.5px;
+            margin-bottom: 0
+        }
+        
+        .newsletter {
+            letter-spacing: 19.3px;
+            width: 320px
+        }
+        
+        .newsletter:after {
+            display: block;
+            background: #000;
+            height: 5px;
+            width: 64px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -2px
+        }
+        
+        @-moz-keyframes glitch {
+            2.5% {
+                -moz-transform: skew(30deg);
+                transform: skew(30deg)
+            }
+            3% {
+                -moz-transform: skew(154deg);
+                transform: skew(154deg)
+            }
+            3.5% {
+                -moz-transform: skew(115deg);
+                transform: skew(115deg)
+            }
+            4% {
+                -moz-transform: skew(151deg);
+                transform: skew(151deg)
+            }
+            4.5% {
+                -moz-transform: skew(152deg);
+                transform: skew(152deg)
+            }
+        }
+        
+        @-webkit-keyframes glitch {
+            2.5% {
+                -webkit-transform: skew(91deg);
+                transform: skew(91deg)
+            }
+            3% {
+                -webkit-transform: skew(-10deg);
+                transform: skew(-10deg)
+            }
+            3.5% {
+                -webkit-transform: skew(82deg);
+                transform: skew(82deg)
+            }
+            4% {
+                -webkit-transform: skew(140deg);
+                transform: skew(140deg)
+            }
+            4.5% {
+                -webkit-transform: skew(93deg);
+                transform: skew(93deg)
+            }
+        }
+        
+        @keyframes glitch {
+            2.5% {
+                -moz-transform: skew(127deg);
+                -ms-transform: skew(127deg);
+                -webkit-transform: skew(127deg);
+                transform: skew(127deg)
+            }
+            3% {
+                -moz-transform: skew(118deg);
+                -ms-transform: skew(118deg);
+                -webkit-transform: skew(118deg);
+                transform: skew(118deg)
+            }
+            3.5% {
+                -moz-transform: skew(30deg);
+                -ms-transform: skew(30deg);
+                -webkit-transform: skew(30deg);
+                transform: skew(30deg)
+            }
+            4% {
+                -moz-transform: skew(59deg);
+                -ms-transform: skew(59deg);
+                -webkit-transform: skew(59deg);
+                transform: skew(59deg)
+            }
+            4.5% {
+                -moz-transform: skew(4deg);
+                -ms-transform: skew(4deg);
+                -webkit-transform: skew(4deg);
+                transform: skew(4deg)
+            }
+        }
+        
+        @-moz-keyframes noise {
+            0% {
+                background-position: -49px 96px
+            }
+            10% {
+                background-position: -91px 76px
+            }
+            20% {
+                background-position: -33px -16px
+            }
+            30% {
+                background-position: 34px -74px
+            }
+            40% {
+                background-position: 29px 43px
+            }
+            50% {
+                background-position: -45px 47px
+            }
+            60% {
+                background-position: 47px 56px
+            }
+            70% {
+                background-position: -17px -56px
+            }
+            80% {
+                background-position: -37px -42px
+            }
+            90% {
+                background-position: -17px -80px
+            }
+        }
+        
+        @-webkit-keyframes noise {
+            0% {
+                background-position: -3px -81px
+            }
+            10% {
+                background-position: -70px -46px
+            }
+            20% {
+                background-position: 72px -32px
+            }
+            30% {
+                background-position: 52px -56px
+            }
+            40% {
+                background-position: 8px 67px
+            }
+            50% {
+                background-position: -82px -72px
+            }
+            60% {
+                background-position: -69px 11px
+            }
+            70% {
+                background-position: -78px -41px
+            }
+            80% {
+                background-position: 8px -90px
+            }
+            90% {
+                background-position: -93px -41px
+            }
+        }
+        
+        @keyframes noise {
+            0% {
+                background-position: -30px -26px
+            }
+            10% {
+                background-position: -19px 44px
+            }
+            20% {
+                background-position: -34px -34px
+            }
+            30% {
+                background-position: 64px -76px
+            }
+            40% {
+                background-position: 28px 55px
+            }
+            50% {
+                background-position: 20px -80px
+            }
+            60% {
+                background-position: -72px 17px
+            }
+            70% {
+                background-position: 4px 59px
+            }
+            80% {
+                background-position: -89px -33px
+            }
+            90% {
+                background-position: 41px -32px
+            }
+        }
+        
+        @-moz-keyframes bar {
+            0% {
+                height: 216px;
+                top: 78%;
+                opacity: .03
+            }
+            10% {
+                height: 68px;
+                top: 80%;
+                opacity: .79
+            }
+            20% {
+                height: 575px;
+                top: 69%;
+                opacity: .72
+            }
+            30% {
+                height: 587px;
+                top: 28%;
+                opacity: .13
+            }
+            40% {
+                height: 371px;
+                top: 6%;
+                opacity: .06
+            }
+            50% {
+                height: 101px;
+                top: 1%;
+                opacity: .37
+            }
+            60% {
+                height: 119px;
+                top: 65%;
+                opacity: .31
+            }
+            70% {
+                height: 542px;
+                top: 48%;
+                opacity: .07
+            }
+            80% {
+                height: 320px;
+                top: 67%;
+                opacity: .56
+            }
+            90% {
+                height: 482px;
+                top: 93%;
+                opacity: .47
+            }
+        }
+        
+        @-webkit-keyframes bar {
+            0% {
+                height: 202px;
+                top: 22%;
+                opacity: .7
+            }
+            10% {
+                height: 553px;
+                top: 73%;
+                opacity: .41
+            }
+            20% {
+                height: 564px;
+                top: 21%;
+                opacity: .77
+            }
+            30% {
+                height: 41px;
+                top: 71%;
+                opacity: .04
+            }
+            40% {
+                height: 250px;
+                top: 53%;
+                opacity: .15
+            }
+            50% {
+                height: 284px;
+                top: 53%;
+                opacity: .73
+            }
+            60% {
+                height: 208px;
+                top: 40%;
+                opacity: .46
+            }
+            70% {
+                height: 612px;
+                top: 88%;
+                opacity: .46
+            }
+            80% {
+                height: 551px;
+                top: 45%;
+                opacity: .09
+            }
+            90% {
+                height: 525px;
+                top: 3%;
+                opacity: .52
+            }
+        }
+        
+        @keyframes bar {
+            0% {
+                height: 417px;
+                top: 75%;
+                opacity: .35
+            }
+            10% {
+                height: 224px;
+                top: 60%;
+                opacity: .11
+            }
+            20% {
+                height: 577px;
+                top: 26%;
+                opacity: .52
+            }
+            30% {
+                height: 412px;
+                top: 57%;
+                opacity: .34
+            }
+            40% {
+                height: 433px;
+                top: 94%;
+                opacity: .6
+            }
+            50% {
+                height: 282px;
+                top: 22%;
+                opacity: .37
+            }
+            60% {
+                height: 120px;
+                top: 97%;
+                opacity: .79
+            }
+            70% {
+                height: 257px;
+                top: 54%;
+                opacity: .62
+            }
+            80% {
+                height: 72px;
+                top: 95%;
+                opacity: .69
+            }
+            90% {
+                height: 288px;
+                top: 76%;
+                opacity: .73
+            }
+        }
+        
+        .glitch span {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            z-index: 1;
+            -moz-animation: glitch 3s infinite alternate;
+            -webkit-animation: glitch 3s infinite alternate;
+            animation: glitch 3s infinite alternate
+        }
+        
+        .down_part,
+        .glitched,
+        .wrapg {
+            position: absolute
+        }
+        
+        @keyframes glitch-anim {
+            0%,
+            5%,
+            51%,
+            55% {
+                clip-path: polygon(0 10%, 100% 10%, 100% 15%, 0 15%)
+            }
+            10%,
+            56%,
+            6%,
+            60% {
+                clip-path: polygon(0 40%, 100% 40%, 100% 42%, 0 42%)
+            }
+            11%,
+            15%,
+            61%,
+            65% {
+                clip-path: polygon(0 75%, 100% 75%, 100% 80%, 0 80%)
+            }
+            16%,
+            20%,
+            66%,
+            70%,
+            81%,
+            85% {
+                clip-path: polygon(0 20%, 100% 20%, 100% 22%, 0 22%)
+            }
+            21%,
+            25%,
+            71%,
+            75% {
+                clip-path: polygon(0 87%, 100% 87%, 100% 93%, 0 93%)
+            }
+            26%,
+            30%,
+            76%,
+            80% {
+                clip-path: polygon(0 30%, 100% 30%, 100% 45%, 0 45%)
+            }
+            31%,
+            50%,
+            86%,
+            95% {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+            }
+        }
+        
+        .wrapg {
+            top: 0;
+            left: 0;
+            margin: 0 auto
+        }
+        
+        .wrapg img {
+            height: auto
+        }
+        
+        .glitched,
+        .glitched:nth-child(2),
+        .glitched:nth-child(3) {
+            background-blend-mode: screen;
+            width: 100vw!important;
+            height: 100vh!important;
+            background-size: cover!important;
+            top: 0;
+            left: 0
+        }
+        
+        .glitched {
+            animation: glitch-anim 1.5s .5s infinite linear alternate-reverse;
+            background-color: rgba(215, 215, 215, .1);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            transform: translateX(-2px)
+        }
+        
+        .glitched:nth-child(2) {
+            animation-delay: .5s;
+            background-color: rgba(155, 155, 155, .15);
+            transform: translateX(4px)
+        }
+        
+        .glitched:nth-child(3) {
+            animation-delay: 1s;
+            background-color: rgba(241, 241, 241, .15);
+            transform: translateX(2px)
+        }
+        
+        .glitch-pause {
+            animation: none
+        }
+        
+        .down_part {
+            padding: 0 100px;
+            bottom: 65px;
+            width: 100%
+        }
+        
+        .main_popap_word {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 48px;
+            letter-spacing: 46px
+        }
+        
+        .first_word_main {
+            margin-bottom: 56px;
+            position: relative;
+            padding-left: 39px;
+            letter-spacing: 48px
+        }
+        
+        .first_word_main span {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            top: 50%;
+            display: block;
+            background: #fff
+        }
+        
+        .check_list,
+        .fl_zone {
+            z-index: 100;
+            position: relative
+        }
+        
+        .mail_p {
+            margin-bottom: 16px
+        }
+        
+        #user-one .hover_links {
+            background: #fff;
+            border: 3px solid #fff;
+            color: #1a1a1a;
+            width: 152px!important;
+            margin: 0;
+            z-index: 100
+        }
+        
+        .check_list {
+            margin-bottom: 30px
+        }
+        
+        .fl_zone {
+            margin-bottom: 36px
+        }
+        
+        .small_p.check_p {
+            margin-bottom: 15px
+        }
+        
+        .social_glitch_box {
+            position: absolute;
+            bottom: 90px;
+            padding: 0 98px;
+            width: 100%;
+            z-index: 10
+        }
+        
+        .social_glitch_box .social_link {
+            -o-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+            -o-transform: rotate(-90deg) translate(-21px, 10px);
+            -moz-transform: rotate(-90deg) translate(-21px, 10px);
+            -webkit-transform: rotate(-90deg) translate(-21px, 10px);
+            transform: rotate(-90deg) translate(-21px, 10px)
+        }
+        
+        .social_glitch_box .social_link li a:hover {
+            color: #9c8d8d
+        }
+        
+        .social_glitch_box .social_link li a {
+            color: #fff
+        }
+        
+        .social_glitch_box .social_link li a:after {
+            background: #fff
+        }
+        
+        .cd-main-content {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: table
+        }
+        
+        .cd-modal {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            visibility: hidden;
+            -webkit-transition: visibility 0s .6s;
+            -moz-transition: visibility 0s .6s;
+            transition: visibility 0s .6s
+        }
+        
+        .cd-modal svg {
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+        
+        .cd-modal svg>path {
+            fill: #000
+        }
+        
+        .cd-modal.modal-is-visible {
+            visibility: visible;
+            -webkit-transition: visibility 0s 0s;
+            -moz-transition: visibility 0s 0s;
+            transition: visibility 0s 0s
+        }
+        
+        .cd-modal-content {
+            position: relative;
+            height: 100vh;
+            overflow-y: auto;
+            opacity: 0;
+            -webkit-transition: opacity .3s 0s, -webkit-transform .3s 0s;
+            -moz-transition: opacity .3s 0s, -moz-transform .3s 0s;
+            transition: opacity .3s 0s, transform .3s 0s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        
+        .modal-is-visible .cd-modal-content {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-overflow-scrolling: touch;
+            -webkit-transition: opacity .3s .3s, -webkit-transform .3s .3s;
+            -moz-transition: opacity .3s .3s, -moz-transform .3s .3s;
+            transition: opacity .3s .3s, transform .3s .3s
+        }
+        
+        .cd-cover-layer {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #f2f2f2;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: opacity .3s .3s, visibility 0s .6s;
+            -moz-transition: opacity .3s .3s, visibility 0s .6s;
+            transition: opacity .3s .3s, visibility 0s .6s
+        }
+        
+        .cd-cover-layer.modal-is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+            -moz-transition: opacity .3s 0s, visibility 0s 0s;
+            transition: opacity .3s 0s, visibility 0s 0s
+        }
+        
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+        
+        *,
+         :after,
+         :before {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+        
+        i,
+        img,
+        ol,
+        p,
+        tr,
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+    </style>
+
+
+
+
+
+    <script>
+        ! function(e) {
+            "use strict";
+
+            function t(e, t, n) {
+                e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+            }
+
+            function n(t, n) {
+                return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
+            }
+
+            function a(t, a) {
+                if (e.localStorage && e.XMLHttpRequest) n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
+                else {
+                    var s = r.createElement("link");
+                    s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0].appendChild(s), r.cookie = t
+                }
+            }
+
+            function l(e, t) {
+                var n = new XMLHttpRequest;
+                n.open("GET", t, !0), n.onreadystatechange = function() {
+                    4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n.responseText, localStorage[e + "_file"] = t)
+                }, n.send()
+            }
+
+            function o(e) {
+                var t = r.createElement("style");
+                t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e
+            }
+            var r = e.document;
+            e.loadCSS = function(e, t, n) {
+                var a, l = r.createElement("link");
+                if (t) a = t;
+                else {
+                    var o;
+                    o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
+                }
+                var s = r.styleSheets;
+                l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
+                var c = function(e) {
+                    for (var t = l.href, n = s.length; n--;)
+                        if (s[n].href === t) return e();
+                    setTimeout(function() {
+                        c(e)
+                    })
+                };
+                return l.onloadcssdefined = c, c(function() {
+                    l.media = n || "all"
+                }), l
+            }, e.loadLocalStorageCSS = function(l, o) {
+                n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function() {
+                    a(l, o)
+                })
+            }
+        }(this);
+    </script>
+
+    <!-- Load CSS Start -->
+    <script>
+        loadCSS("css/BS.css?ver=1.0.0", false, "all");
+    </script>
+    <script>
+        loadCSS("css/slick.min.css?ver=1.0.0", false, "all");
+    </script>
+    <script>
+        loadCSS("css/magnific-popup.1.0.0.min.css?ver=1.0.0", false, "all");
+    </script>
+    <script>
+        loadCSS("css/jquery.fancybox.min.css?ver=1.0.0", false, "all");
+    </script>
+
+    <script>
+        loadCSS("css/new.css?ver=1.0.0", false, "all");
+    </script>
+
+    <script>
+        loadCSS("css/effect.modal.css?ver=1.0.0", false, "all");
+    </script>
+
+    <!-- Load CSS End -->
+
+    <!-- Load CSS Compiled without JS -->
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/magnific-popup.1.0.0.min.css">
+        <link rel="stylesheet" href="css/slick.min.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css?ver=1.0.0">
+        <link rel="stylesheet" href="css/effect.modal.css?ver=1.0.0">
+    </noscript>
+
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div class="preloader">
+            <div class="pl-l"></div>
+            <div class="pl-r"></div>
+            <div class="pl-line">
+                <div></div>
+            </div>
+        </div>
+
+        <div id="v_cont">
+            <div id="home-page-video" class="video" data-src="" data-video="http://fergie.com/fergie.mp4" data-placeholder="">
+            </div>
+        </div>
+        <audio id="audio-file-home" autoplay loop>
+             <source src="http://fergie.com/fergie_splash.mp3" type="audio/mpeg">
+         </audio>
+
+
+
+
+        <header>
+            <div class="container_area">
+                <div class="row">
+                    <div class="col-mini-12 col-mob-12 col-ipad-12 col-pc-12 col-bpc-12 col-hdf-12 col-hd-12">
+
+                        <ul class="social_link">
+                            <li><a href="https://www.instagram.com/fergie/" target="blank_"><span>Instagram</span></a></li>
+                            <li><a href="https://www.facebook.com/fergie/" target="blank_"><span>Facebook</span></a></li>
+                            <li><a href="https://twitter.com/fergie" target="blank_"><span>Twitter</span></a></li>
+                            <li><a href="https://www.youtube.com/user/FergieVEVO" target="blank_"><span>Youtube</span></a></li>
+                            <li><a href="https://play.spotify.com/artist/3r17AfJCCUqC9Lf0OAc73G" target="blank_"><span>Spotify</span></a></li>
+
+                        </ul>
+                        <div id="mt-wrp" class="mute-wrapped">
+
+                            <a href="http://fergieshop.com" class="shop" target="blank_">shop</a>
+                            <div id="mute" class="mute-active">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="logo_fergie"><img src="./images/logo.png" alt="LOGO" /></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="blok__">
+            <div class="container_area">
+                <div class="row">
+                    <div class="col-mini-12 col-mob-12 col-ipad-12 col-pc-6 col-bpc-6 col-hdf-6 col-hd-6 bvh__">
+
+                        <div class="txt_box">
+                            <h3 class="t-up">
+                                <div class="glitch gl_box">
+                                    <p class="glitch fergie_glitch t-up"><span>Pre-order</span>
+                                        <p>
+                                            <p class="glitch fergie_glitch newsletter t-up"><span>Double</span></p>
+                                            <p class="glitch fergie_glitch last_fergie_glitch t-up"><span>Dutchess</span>
+                                                <p>
+                                </div>
+                            </h3>
+                            <p class="notice">Pre-order the new album & Visual Experience. Available everywhere 9/22.</p>
+
+                            <div class="clearfix hover_group">
+                                <a href="http://ferg.be/doubledutchess" onclick="set(this);" class="cd-btn hover_links tc t-up hover_1" target="_blank" title="Subscribe">
+                                    <span class="initial_word">Pre-order</span>
+                                    <span class="finish_word">Pre-order</span>
+                                </a>
+                                <a href="#" onclick="set(this);" class="cd-btn hover_links tc t-up hover_2" id="modal-trigger-2" title="Subscribe" data-type="cd-modal-trigger">
+                                    <span class="initial_word">Subscribe</span>
+                                    <span class="finish_word">Subscribe</span>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-mini-12 col-mob-12 col-ipad-12 col-pc-6 col-bpc-6 col-hdf-6 col-hd-6 vh__">
+
+                        <div class="logo_fergie">
+                            <a href="http://ferg.be/hungry" target="_blank"><img src="./images/album.png" alt="album." /></a>
+
+                            <div class="b_top">
+                                <p class="name">You Already Know </br>ft. Nicki Minaj</p>
+
+
+                                <ul class="linke">
+                                    <li><a href="https://itunes.apple.com/ua/album/you-already-know-feat-nicki-minaj-interlude-version/id1273928914?i=1273929164&app=itunes&ign-mpt=uo%3D4" target="blank_"><span>ITunes</span></a></li>
+                                    <li><a href="https://play.spotify.com/track/1irQqioH3g13sybtzD3jJL?play=true&utm_source=open.spotify.com&utm_medium=open" target="blank_"><span>spotify</span></a></li>
+
+
+                                </ul>
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="container_area">
+                <div class="row">
+                    <div class="col-mini-12 col-mob-12 col-ipad-12 col-pc-12 col-bpc-12 col-hdf-12 col-hd-12 ">
+
+                        <ul class="social_link">
+                            <li><a href="https://www.facebook.com/fergie/" target="blank_"><span>facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/fergie/" target="blank_"><span>instagram</span></a></li>
+                            <li><a href="https://play.spotify.com/artist/3r17AfJCCUqC9Lf0OAc73G" target="blank_"><span>spotify</span></a></li>
+
+                            <li><a href="https://twitter.com/fergie" target="blank_"><span>twitter</span></a></li>
+                            <li><a href="https://www.youtube.com/user/FergieVEVO" target="blank_"><span>youtube</span></a></li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!--ALL MODALS ADDED HERE-->
+        <div class="cd-modal" data-modal="modal-trigger-2">
+            <div class="cd-svg-bg" data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z" data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+                data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z" data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+                data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z" data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+                <svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+          <path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+          <path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+          <path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+        </svg>
+            </div>
+            <div class="cd-modal-content">
+                <div id="openModal" class="popap store-flat room-box" style="overflow-x: hidden;">
+                    <div>
+                        <div class="wrapg">
+                            <img src="http://fergie.com/images/bg-popap.png" data-glitch-count="3" class="glitchme" alt="" />
+                        </div>
+                        <div class="container_area">
+                            <div class="row">
+                                <div class="col-mini-12 col-mob-12 col-ipad-12 col-pc-12 col-bpc-12 col-hdf-12 col-hd-12">
+
+
+                                    <form id="user-one" class="enter-mail ordering-cell user-form prevention" method="POST" action="javascript:void(null);">
+                                        <input type="hidden" name="project_name" value="Fergie">
+                                        <input type="hidden" name="admin_email" value="spencer@aaroent.com">
+                                        <input type="hidden" name="admin_email" value="taylor@aaroent.com">
+                                        <input type="hidden" name="form_subject" value="Форма">
+                                        <div class="main_popap_word t-up">
+                                            <p class="first_word_main t-up tc">Stay</p>
+                                            <p class="t-up">Up&#8212;</p>
+                                        </div>
+
+                                        <div class="fl_zone">
+                                            <p class="mail_p">
+                                                <span class="field">
+                            <input type="email" name="email" onfocus="this.placeholder=''" onblur="this.placeholder='EMAIL ADDRESS *'" class="head-field" placeholder="EMAIL ADDRESS *" title="email@domain.com"
+                              pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$" required="" />
+                          </span>
+                                            </p>
+                                            <p>
+                                                <span class="field">
+                            <input type="tel" name="zip_code" onfocus="this.placeholder=''"  onblur="this.placeholder='ZIP CODE *'" class="head-field" placeholder="ZIP CODE *" required="" />
+                          </span>
+                                                <i class="ico-call ico-back"></i><br>
+                                            </p>
+                                        </div>
+                                        <input type="hidden" class="pacet" name="тип формы" value="">
+                                        <input type="hidden" name="start_day" value="0" />
+                                        <input type="hidden" name="campaign_token" value="" />
+                                        <button class="hover_links form-receive hide-btn" name="send" type="submit">
+                        <span class="initial_word t-up">Subscribe</span>
+                        <span class="finish_word t-up">Subscribe</span>
+                    </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="social_glitch_box">
+                        <div class="logo_fergie logo_white"><img src="./images/logo_white.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#0" class="trigger-close">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+    </div>
+    <div class="cd-cover-layer"></div>
+    <!--ALL MODALS ADDED HERE-->
+    <script type="text/javascript">
+        var wrapg = document.querySelector('.wrapg');
+        var img = document.querySelector('.glitchme');
+        var count = Number(img.dataset.glitchCount);
+
+        img.addEventListener('load', function() {
+            for (var i = 0; i < count; i++) {
+                var glitcha = document.createElement('div');
+
+                // add cloned image to div wrapper
+                glitcha.className += ' glitched glitch-' + i;
+                glitcha.style = 'background-image: url(' + img.getAttribute('src') + '); ';
+
+                wrapg.appendChild(glitcha);
+            }
+        });
+
+        setInterval(function() {
+            var glitches = document.querySelectorAll('.glitched');
+            for (var i = 0; i < glitches.length; i++) {
+                glitches[i].classList.toggle('glitch-pause');
+            }
+        }, 3000);
+    </script>
+    <script type="text/javascript">
+        (function() {
+            if (window.pluso)
+                if (typeof window.pluso.start == "function") return;
+            if (window.ifpluso == undefined) {
+                window.ifpluso = 1;
+                var d = document,
+                    s = d.createElement('script'),
+                    g = 'getElementsByTagName';
+                s.type = 'text/javascript';
+                s.charset = 'UTF-8';
+                s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+                var h = d[g]('body')[0];
+                h.appendChild(s);
+            }
+        })();
+    </script>
+    <script>
+        ! function(e, t, r) {
+            function n() {
+                for (; d[0] && "loaded" == d[0][f];) c = d.shift(), c[o] = !i.parentNode.insertBefore(c, i)
+            }
+            for (var s, a, c, d = [], i = e.scripts[0], o = "onreadystatechange", f = "readyState"; s = r.shift();) a = e.createElement(t), "async" in i ? (a.async = !1, e.head.appendChild(a)) : i[f] ? (d.push(a), a[o] = n) : e.write("<" + t + ' src="' + s + '" defer></' + t + ">"), a.src = s
+        }(document, "script", [
+            "js/jquery-3.1.1.min.js",
+            "js/inputmask.min.js",
+            "js/tweenMax.min.js",
+            "js/jquery.fancybox.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js",
+            "js/common.js"
+        ])
+    </script>
+</body>
+
+</html>

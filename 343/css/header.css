@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/*CSS FONTS Web~Fobiya*/
+/*CSS FONTS END Web~Fobiya*/
+button {
+  border: none !important; }
+
+a,
+button {
+  cursor: pointer;
+  -webkit-transition: all 0.5s !important;
+  transition: all 0.5s !important; }
+
+a:hover,
+button:hover {
+  -webkit-transition: all 0.5s !important;
+  transition: all 0.5s !important; }
+
+body {
+  overflow-x: hidden !important; }
+
+div,
+a {
+  position: relative;
+  display: block; }
+
+/* НАВИГАЦИЯ элименты STYLE Web~Fobiya --------- */
+.box__navigation {
+  width: 100px;
+  background-color: #ffffff;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  float: right;
+  z-index: 300; }
+
+.bottom__blur {
+  overflow: hidden !important;
+  display: block !important;
+  position: relative !important;
+  text-align: center;
+  color: #fff;
+  font: 0.88em "HelveticaNeueCyr-Bold";
+  max-width: 279px;
+  width: 100%;
+  height: 69px;
+  letter-spacing: .15em;
+  line-height: 69px !important;
+  background: -webkit-linear-gradient(305deg, #8e44ad 34%, #83438d 65%);
+  background: linear-gradient(145deg, #8e44ad 34%, #83438d 65%);
+  z-index: 0; }
+  .bottom__blur:hover {
+    -webkit-box-shadow: 0 0px 25px rgba(0, 0, 25, 0.5);
+    box-shadow: 0 0px 25px rgba(0, 0, 25, 0.5); }
+
+/* независимые элименты STYLE Web~Fobiya --------- */
+/* Rectangle Out END */
+/* независимые элименты STYLE Web~Fobiya --------- */
+/* Rectangle Out END */
+/* END независимые элименты STYLE Web~Fobiya ------ */
+/*CSS style Web~Fobiya*/
+.primer {
+  width: 100px;
+  background: #fff !important;
+  position: fixed !important;
+  height: 100% !important;
+  z-index: 111 !important;
+  top: 0% !important;
+  bottom: 0% !important;
+  right: 0% !important; }
+  @media only screen and (max-width: 1299px) {
+    .primer {
+      display: none !important; } }
+  @media only screen and (max-width: 1400px) and (min-width: 1300px) {
+    .primer {
+      width: 50px; } }
+  .primer .box__bottom {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+    z-index: 112;
+    position: relative;
+    text-align: center; }
+    @media only screen and (max-width: 1400px) and (min-width: 1300px) {
+      .primer .box__bottom {
+        padding: 5px; } }
+  .primer .call__bec {
+    padding-top: 250px; }
+    .primer .call__bec span {
+      -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      display: block; }
+      .primer .call__bec span a {
+        width: 300px;
+        color: #2b2b2b;
+        font: 0.81em "HelveticaNeueCyr-Roman";
+        line-height: 4.308;
+        text-transform: uppercase;
+        position: relative;
+        top: 0; }
+        .primer .call__bec span a:hover {
+          color: #83438d; }
+
+.pages header .lodo {
+  margin-bottom: 193px; }
+
+.pages header h1 {
+  color: #2b2b2b;
+  font-size: 2.5em;
+  line-height: 1.4;
+  margin-bottom: 25px; }
+
+.pages header .new {
+  background: url(../images/hed1.png) no-repeat !important; }
+
+header {
+  position: relative;
+  height: 949px; }
+  header .box__bac {
+    margin-top: 0px;
+    width: 100%;
+    height: 949px;
+    background: #f9f9f9;
+    position: absolute; }
+  header .lodo {
+    margin-top: 50px;
+    margin-bottom: 196px; }
+  header .sebtitle {
+    color: #2b2b2b;
+    font: 1em "HelveticaNeueCyr-Light";
+    letter-spacing: .05em;
+    margin-bottom: 20px; }
+  header h1 {
+    color: #2b2b2b;
+    font: 3.81em "PFRegalDisplayPro-UBlack";
+    margin-bottom: 34px;
+    line-height: .9em; }
+  header .slogan {
+    color: #2b2b2b;
+    font: 1.31em "HelveticaNeueCyr-Bold";
+    letter-spacing: .05em;
+    margin-bottom: 50px; }
+  header .box__img {
+    width: 953px;
+    height: 950px;
+    margin-left: -110px;
+    padding-top: 30px;
+    padding-left: 80px; }
+    header .box__img .border {
+      width: 795px;
+      height: 890px; }
+  header .nes {
+    background: url(../images/Img_hed.png) no-repeat; }
+
+/*CSS style Web~Fobiya*/
+/*CSS style (max-width: 1199px) and (min-width: 993px) Web~Fobiya                               ----------------------------------   1199*/
+@media only screen and (max-width: 1600px) and (min-width: 1201px) {
+  .pages header {
+    height: 749px; }
+    .pages header .box__bac {
+      width: 100%;
+      height: 749px; }
+    .pages header div.new {
+      background: url(../images/hed2.png) no-repeat !important;
+      background-size: contain; }
+  header {
+    height: 749px; }
+    header .nes {
+      background-size: contain; }
+    header .box__bac {
+      width: 100%;
+      height: 749px; }
+    header .box__img {
+      width: 652px;
+      height: 749px;
+      padding-left: 0px;
+      margin-left: auto; }
+      header .box__img .border {
+        width: 652px;
+        height: 590px; } }
+
+/*CSS style (max-width: 1199px) and (min-width: 993px) Web~Fobiya                               ----------------------------------   1199*/
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+  .pages header div.new {
+    background: url(../images/hed2.png) no-repeat !important; }
+  header .nes {
+    background: url(../images/Img_hed1.png) no-repeat; }
+  header h1 {
+    font-size: 3em; }
+  header .box__img {
+    width: 953px;
+    height: 950px;
+    margin-left: -110px;
+    padding-top: 30px;
+    padding-left: 80px; } }
+
+/*CSS END style (max-width: 1199px) and (min-width: 993px) END Web~Fobiya  */
+/*CSS style (max-width: 992px) and (min-width: 769px) Web~Fobiya                                 ----------------------------------   992*/
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  header {
+    height: auto;
+    padding-bottom: 100px;
+    text-align: center; }
+    header .lodo {
+      margin-bottom: 106px !important; }
+    header .box__img {
+      display: none; }
+    header .bottom__blur {
+      margin-left: auto;
+      margin-right: auto; } }
+
+/*CSS END style (max-width: 992px) and (min-width: 769px) END Web~Fobiya  */
+/*CSS style (max-width: 768px) and (min-width: 541px) Web~Fobiya                                 ----------------------------------   768*/
+@media only screen and (max-width: 768px) and (min-width: 541px) {
+  .pages header .lodo {
+    margin-bottom: 76px; }
+  .pages header h1 {
+    font-size: 2em; }
+  header {
+    height: auto;
+    padding-bottom: 100px;
+    text-align: center; }
+    header h1 {
+      font-size: 3em; }
+    header .lodo {
+      margin-bottom: 96px; }
+      header .lodo img {
+        max-width: 340px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; }
+    header .box__img {
+      display: none; }
+    header .bottom__blur {
+      margin-left: auto;
+      margin-right: auto; } }
+
+/*CSS END style (max-width: 768px) and (min-width: 541px) END Web~Fobiya  */
+/*CSS style (max-width: (max-width: 540px) and (min-width: 321px) Web~Fobiya                     ----------------------------------  540*/
+@media only screen and (max-width: 540px) and (min-width: 321px) {
+  .pages header {
+    padding-bottom: 50px; }
+    .pages header .lodo {
+      margin-bottom: 56px; }
+    .pages header h1 {
+      font-size: 1.5em; }
+  header {
+    height: auto;
+    padding-bottom: 100px;
+    text-align: center; }
+    header h1 {
+      font-size: 2.5em; }
+    header .lodo {
+      margin-top: 30px;
+      margin-bottom: 50px; }
+      header .lodo img {
+        max-width: 340px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; }
+    header .box__img {
+      display: none; }
+    header .bottom__blur {
+      margin-left: auto;
+      margin-right: auto; } }
+
+/*CSS END style (max-width: 768px) and (min-width: 541px) END Web~Fobiya  */
+/*CSS style (max-width: 320px) and (min-width: 200px) { Web~Fobiya                               ----------------------------------  320*/
+@media only screen and (max-width: 320px) and (min-width: 200px) {
+  .pages header {
+    padding-bottom: 35px; }
+    .pages header .lodo {
+      margin-bottom: 40px; }
+    .pages header h1 {
+      font-size: 1.2em; }
+  header {
+    height: auto;
+    padding-bottom: 100px;
+    text-align: center; }
+    header h1 {
+      font-size: 2.2em; }
+    header .slogan {
+      font-size: 1em; }
+    header .lodo {
+      margin-top: 30px;
+      margin-bottom: 50px; }
+      header .lodo img {
+        max-width: 340px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; }
+    header .box__img {
+      display: none; }
+    header .bottom__blur {
+      margin-left: auto;
+      margin-right: auto; } }
+
+/*CSS END style (max-width: 320px) and (min-width: 200px) END Web~Fobiya  */

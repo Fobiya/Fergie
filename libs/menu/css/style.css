@@ -1,0 +1,291 @@
+
+header{
+    position: fixed;
+    top: 0px;
+
+    width: 100%;
+    height: 130px;
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    z-index:1000;
+}
+
+header.stick {
+    height: 50px;
+    text-align: left;
+    padding: 10px 0 !Important;
+    transition: all 0.4s ease-in-out;   
+    -webkit-transition: all 0.4s ease-in-out;
+    background: rgb(244, 246, 249);
+    border-bottom: 2px solid rgba(79, 186, 236, 0.10);
+}
+
+    .wrap-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .branding {
+
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;    
+    }
+    
+    .branding.stick {
+        height: 30px;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;    
+    }
+
+        .logo-lg {
+            max-width: 150px;
+            height: 100%;
+        }
+
+        .logo-sm {
+            max-width: 150px;
+            height: 100%;
+            display: none;
+        }
+
+    .menu {
+ 
+    }
+
+    .listMenu { 
+        display: none;
+    }
+
+/* just for the example, delete this */
+
+.stripe {
+    height: 400px;
+    position: relative;
+}
+
+.stripe:first-child {
+    height: 600px;
+    position: relative;
+}
+
+.stripe:nth-child(even) {
+    background: #ecc6d9;
+}
+
+/* 
+==================================================
+- The Mobile Menu
+==================================================
+*/
+
+/* The Menu Button */
+.mobileMenuButton {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 34px;
+    z-index: 1000;
+
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+       float: left;
+    margin-top: 18px;
+    
+}
+
+.mobileMenuButton:hover {
+opacity:.8;
+}
+
+
+.mobileMenuButton:active {
+   opacity:.8;
+}
+
+
+.mobileMenuButton:hover span  {
+opacity:.8;
+}
+.mobileMenuButton:hover span:before  {
+opacity:.8;
+
+}
+.mobileMenuButton:hover span:after  {
+opacity:.8;
+
+}
+
+
+.mobileMenuButton span {
+    margin-top: 50%;
+}
+.mobileMenuButton span, .mobileMenuButton span:before, .mobileMenuButton span:after {
+    cursor: pointer;
+
+    height: 4px;
+    width: 25px;
+    background: #18344c;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    content: '';
+}
+.mobileMenuButton span:before {
+    top: -8px;
+}
+.mobileMenuButton span:after {
+    bottom: -8px; 
+}
+
+
+
+/* The Menu */
+.mobileMenu { 
+   width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    text-align: right;
+    padding-top: 100px;
+    transition: all .3s ease-in-out;
+    border-left: 4px solid rgba(79, 186, 236, 0.21);
+    
+}
+
+    .slideOut { 
+        margin-right: -240px;
+        transition: all .3s ease-in-out;
+    }
+
+    .slideIn { 
+        margin-right: 0px;
+    }
+
+.mobileMenu h2 {
+
+    color: #333333;
+    font-size: 36px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+}
+
+.mobileMenu ul {
+    list-style: none;
+}
+
+
+.mobileMenu li { 
+  border-bottom: 1px dashed #cecbcb;
+    padding: 0 30px;
+}
+
+.mobileMenu li a {
+
+    line-height: inherit;
+    padding: 15px 0;
+      color: #18344c;
+    font-family: "Lato-Medium";
+
+    text-decoration: none;
+
+    display: block;
+    /* CSS Transition */
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.mobileMenu li a:hover {
+ 
+}
+
+
+/*.overlay {*/
+    /*background:rgba(0,0,0,0.7);*/
+    /*width:100%;*/
+    /*height:100%;*/
+    /*position:absolute;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*display:none;*/
+    /*opacity: 0;*/
+    /*position: fixed;*/
+    /*transition: all .3s ease-in-out;*/
+    /*z-index: 1;*/
+/*}*/
+
+
+
+
+/* 
+==================================================
+- Media Query Mobile First Aproach
+==================================================
+*/
+@media (min-width:769px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+    
+    .mobileMenu {
+        display: none;
+    }
+    
+    .wrap-container {
+
+            margin: 0 auto;
+    }
+    
+    .mobileMenuButton {
+        display:none;
+    }
+    
+    .listMenu { 
+        display: inherit;
+    }
+
+    .listMenu li {
+        display: inline;
+        padding: 0px 15px;
+    }
+    
+
+    .listMenu li a {
+
+        line-height: inherit;
+        padding: 0;
+
+
+        text-decoration: none;
+
+        display: inline-block;
+        /* CSS Transition */
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    
+   
+    
+    .mobileButton {
+        display: none;
+    }
+    
+}

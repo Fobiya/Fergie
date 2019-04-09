@@ -1,0 +1,110 @@
+
+html *,
+html *:before,
+html *:after {
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+html i,
+html em,
+html b,
+html strong,
+html span {
+  -webkit-transition: none;
+  transition: none;
+}
+
+
+
+
+
+
+
+[class^="btn-"] {
+  position: relative;
+  display: block;
+
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 2;
+}
+
+
+.btn-0:before {
+  content: '';
+  position: absolute;
+z-index: -1;
+
+}
+.btn-0:hover {
+  color: #d6e0d8;
+}
+.btn-0:hover:before {
+  width: 250px;
+}
+.btn-0:active {
+  background: #5b8463;
+}
+
+@-webkit-keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+@-webkit-keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}

@@ -1,0 +1,42 @@
+/* Component styles */
+button {
+  background: #592884;
+
+  height: 55px;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-family: $FSS;
+  text-align: center;
+  line-height: 55px;
+  border: none;
+}
+
+
+
+.button.styl-material {
+  -webkit-transition: 200ms background cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 200ms background cubic-bezier(0.4, 0, 0.2, 1);
+  background: #592884;
+}
+
+.button.styl-material:hover,
+.button.styl-material:focus {
+  outline: none;
+  background: #592884;
+}
+
+.ripple-obj {
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  fill: #803abe;
+}
+
+.ripple-obj use {
+  opacity: 0;
+}
